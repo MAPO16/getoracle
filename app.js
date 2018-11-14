@@ -11,9 +11,9 @@ app.use(methodOverride());
 var router = express.Router();
 router.get('/empleados', function(request, response) {
 	
-		sql = "SELECT * FROM SAT_AGS_CAYAS_MV WHERE EMPLID=:EMPLEADO";
-		var EMPLEADO = parseInt (request.query.EMPLEADO);
-		dao.open(sql,[EMPLEADO],false,response);
+		sql = "SELECT * FROM SAT_AGS_CAYAS_MV WHERE EMPLID=:numempleado";
+		var numempleado = parseInt (request.query.numempleado);
+		dao.open(sql,[numempleado],false,response);
 		
 	
 	response.end;
